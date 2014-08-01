@@ -1,0 +1,53 @@
+<html>
+
+<head>
+<link rel="stylesheet" href="../static/css/auth.css">
+<script src="../static/js/mailGun.js"></script>
+<script src="../static/js/user.js"></script>
+<script src="../static/js/UserController.js"></script>
+<script src="../static/lib/js/mailgun_validator.js"></script>
+<script src="../static/js/myApp.js"></script>
+<script src="../static/js/MainController.js"></script>
+</head>
+</body>
+
+
+<div id="auth-form-container">
+    <div id="auth-form-title">
+        Sign up
+    </div>
+    <div id="auth-form" class="register" ng-app="myApp" ng-controller="MainController, UserController">
+      <form action="" method="post" name="loginForm" novalidate="">
+
+
+
+        <p>
+            <input type="text" name="firstname" id="firstname" placeholder="First name">
+            <input type="text" name="lastname" id="lastname" placeholder="Last name">
+        </p>
+        <p><input type="text" name="username" placeholder="Username"></p>
+        <p><input type="text" name="country" placeholder="Country, City"></p>
+        <br />
+        <p><input type="text" name="email" placeholder="Email Address" required="" ng-model="session.email" mailgun-valid/>
+        <span class="help-block">
+            <span ng-show="loginForm.email.$error.mailgunEmailValid"> Invalid Email Address</span>
+            <span ng-show="loginForm.email.$error.mailgunInProgress"> Validating Email Address</span>
+            <span ng-show="mailgun.mailgunStatus"> Validation Error: {{ mailgun.mailgunStatus }}</span>
+          </span>
+        </p>
+        <p><input type="password" name="password" placeholder="Password"></p>
+
+        <button type="submit" id="signup">Sign up for Carousell</button>
+        <p class="toc">By creating an account, I accept Carousell’s <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+
+        <br />
+
+        <p>Already have an account? <a href="/login/">Log in now</a></p>
+
+    </form>
+</div>
+</div>
+
+
+</body>
+</html>

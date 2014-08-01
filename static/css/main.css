@@ -1,0 +1,483 @@
+/*
+ * Web Starter Kit
+ *
+ * Multi-screen layout styles for your page. Brought to you by the
+ * Web Starter Kit team.
+ *
+ */
+
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'AvenirNext-Regular';
+  background: #f0f0f0;
+}
+
+*:focus {
+  outline: 0;
+}
+
+a, a:visited {
+  color: #525252;
+  text-decoration: none;
+}
+
+.left {
+  text-align: left;
+}
+
+.nav-bar {
+  height: 50px;
+  background: #d2232a;
+  text-align: right;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+.nav-bar div {
+  text-align: left;
+  display: inline-block;
+}
+
+.nav-bar img {
+  width: 34px;
+  height: 34px;
+  margin: 8px;
+}
+
+.nav-bar-left {
+  float: left;
+}
+
+.nav-bar-left .left-menu {
+  display: none;
+}
+
+button#menu, button#notifications, button#search, button#profile-button {
+  border: none;
+  background: transparent;
+  height: 50px;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-bar-logo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -22.5px;
+}
+
+.nav-bar-logo a {
+  height: 45px;
+  width: 45px;
+  margin: 2px;
+  display: inline-block;
+  background-image: url(/static/images/logo.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: center;
+}
+
+.nav-bar-right {
+  float: right;
+  text-align: right;
+}
+
+#signup-button, #login-button {
+  text-decoration: none;
+  display: inline-block;
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  margin: 5px;
+  text-align: center;
+  float: right;
+  border-radius: 0.2em;
+  /*font-family: 'AvenirNext-Bold';*/
+}
+
+#signup-button {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  margin-right: 2.5px;
+}
+
+#login-button {
+  background: white;
+  margin-left: 2.5px;
+  color: #990000;
+}
+
+
+/* hide the popover content */
+.popover .drop-content {
+  display: none;
+}
+
+/* styling the popover menu */
+ul.popover-menu {
+  list-style-type: none;
+  padding: 0;
+}
+
+.drop-content-inner {
+  padding: 0 !important; /* to override the drop style */
+}
+
+ul.popover-menu li::before {
+  display: none;
+}
+
+ul.popover-menu li {
+  padding: 0;
+}
+
+ul.popover-menu a {
+  display: block;
+  background: white;
+  padding: 10px 20px;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  margin-top: 50px;
+}
+
+.container > div {
+  box-sizing: border-box;
+  min-height: 1050px;
+  min-width: 150px;
+}
+
+#leftDrawer, #rightDrawer {
+  position: fixed;
+  width: 250px;
+  height: 100%;
+
+  /*
+    This is a trick to improve performance on newer versions of Chrome
+    #perfmatters
+  */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  -webkit-transition: -webkit-transform 0.4s ease-out;
+  transition: transform 0.4s ease-out;
+
+  z-index: 2;
+}
+
+#leftDrawer {
+  /*
+  Using translate3d as a trick to improve performance on older versions of Chrome
+  See: http://aerotwist.com/blog/on-translate3d-and-layer-creation-hacks/
+  #perfmatters
+  */
+  -webkit-transform: translate(-250px,0);
+  transform: translate(-250px,0);
+  color: #ddd;
+  background: #fff;
+}
+
+#mainPanel {
+  width: 100%;
+  position: absolute;
+  color: #525252;
+  background: #f0f0f0;
+}
+
+#rightDrawer {
+  left: 100%;
+  color: #333;
+  background-color: #b4d2f7;
+}
+
+#vignetteDrawer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.0);
+  z-index: 1;
+  display: none;
+}
+
+#searchDrawer {
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  background: #990000;
+  top: 0px;
+  z-index: 9;
+  padding: 4px 2.0%;
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  -webkit-transition: -webkit-transform 0.4s ease-out;
+  transition: transform 0.4s ease-out;
+}
+
+#searchbox {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 2em;
+  border: none;
+  margin: 0 auto;
+  padding: 0.25em 42px;
+  font-size: 1.4em;
+  line-height: 1.4em;
+  background-image:url('/static/images/search-small.png');
+  background-repeat:no-repeat;
+  background-size: 40px;
+}
+
+span.deleteicon {
+  position: relative;
+  height: 50px;
+  display: block;
+}
+
+span.deleteicon span {
+  position: absolute;
+  display: block;
+  top: 11px;
+  right: 10px;
+  width: 1.4em;
+  height: 1.4em;
+  background-image: url('/static/images/close-button.png');
+  background-repeat: no-repeat;
+  background-size: 22px;
+  cursor: pointer;
+}
+
+/* hide the search box and profile picture and login/signup in the nav bar */
+
+.nav-bar-right span, .nav-bar-right #signup-button, .nav-bar-right #login-button, button#profile-button {
+  display: none;
+}
+
+#leftDrawer.open {
+  -webkit-transform: translate(0,0);
+  transform: translate(0,0);
+}
+
+#rightDrawer.open {
+  -webkit-transform: translate(-250px,0);
+  transform: translate(-250px,0);
+}
+
+#searchDrawer.open {
+  -webkit-transform: translate(0,50px);
+  transform: translate(0,50px);
+}
+
+#vignetteDrawer.open {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* style the items in the left drawer */
+
+.profile-pic {
+  border-radius: 2em;
+  /* for android browser */
+  /*  border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  */
+  border: 2px solid #fff;
+  width: 38px;
+  height: 38px;
+  margin: 6px;
+}
+
+.strong{
+  font-family: 'AvenirNext-Bold';
+}
+
+ul.left-drawer-menu {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul.left-drawer-menu li::before {
+  display: none;
+}
+
+ul.left-drawer-menu li {
+  width: 100%;
+  padding: 0;
+}
+
+ul.left-drawer-menu a {
+  text-decoration: none;
+  display: block;
+  background: white;
+  padding: 10px 20px;
+}
+
+#profile-box {
+  background: #990000;
+  text-align: center;
+}
+
+#profile-box a {
+  background: #990000;
+  text-align: center;
+  padding: 5px;
+}
+
+#profile-box #signup-button {
+  width: 45%;
+  margin-left: 3%;
+  margin-right: 1%;
+  background: transparent;
+  float: none;
+  padding: 0;
+}
+
+#profile-box #login-button {
+  width: 45%;
+  margin-left: 1%;
+  margin-right: 3%;
+  background: white;
+  float: none;
+  padding: 0;
+}
+
+
+.profile-name {
+  color: white;
+  font-size: 20px;
+  margin-right: 19px;
+  display: inline-block;
+  margin-top: 12px;
+}
+
+@media (min-width: 650px) {
+
+  /* hide the relevant menu icons */
+
+  button#menu, button#search {
+    display: none;
+  }
+
+  /* hide the relevant drawers */
+  #searchDrawer, #leftDrawer {
+    display: none; /* temp */
+  }
+
+  /* display the menu and signup/login buttons */
+  .nav-bar-left .left-menu, .nav-bar-right #signup-button, .nav-bar-right #login-button {
+    display: inline-block;
+  }
+
+  ul.left-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  ul.left-menu li::before {
+    display: none;
+  }
+
+  ul.left-menu li {
+    margin: 0;
+    padding: 0;
+    float: left;
+    min-width: 80px;
+    text-transform: uppercase;
+  }
+
+  ul.left-menu li a {
+    height: 50px;
+    line-height: 40px;
+    display: inline-block;
+    padding: 5px;
+    text-decoration: none;
+    color: white;
+  }
+
+  /* add some padding to the nav bar */
+  .nav-bar {
+    /*padding-right: 15px;*/
+  }
+
+  .nav-bar-logo {
+    margin-left: -90px;
+  }
+
+  .nav-bar-logo a {
+    width: 180px;
+    display: inline-block;
+    background-image: url(/static/images/logo-full.png);
+  }
+
+  /* make the search box, notifications and profile align */
+  button#notifications, button#profile-button, .nav-bar-right span {
+    display: block;
+    float: right;
+  }
+
+  /* add a little margin for the profile button */
+  button#profile-button {
+    margin-right: 10px;
+  }
+
+  /* style the search box in the nav */
+
+  #searchbox {
+    width: 200px;
+    margin: 5px auto;
+    padding: 0.2em 40px;
+    font-size: 1.4em;
+    line-height: 1.4em;
+    background: whitesmoke;
+    background-image:url('/static/images/search-small.png');
+    background-repeat:no-repeat;
+    background-size: 40px;
+  }
+
+  span.deleteicon span {
+    top: 15px;
+    background-size: 20px;
+  }
+
+  /* style the profile button in the nav */
+
+  .arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 8px solid #fff;
+  }
+
+}
+
+@font-face {
+  font-family: 'AvenirNext-Bold';
+  src: url('/static/fonts/AvenirNext-Bold.otf');
+}
+
+@font-face {
+  font-family: 'AvenirNext-Regular';
+  src: url('/static/fonts/AvenirNext-Regular.otf');
+}
+
+
